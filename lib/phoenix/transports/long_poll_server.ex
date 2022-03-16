@@ -122,7 +122,7 @@ defmodule Phoenix.Transports.LongPoll.Server do
   defp publish_reply(state, reply) when is_map(reply) do
     IO.warn "Returning a map from the LongPolling serializer is deprecated. " <>
             "Please return JSON encoded data instead (see Phoenix.Socket.Serializer)"
-    publish_reply(state, Phoenix.json_library().encode_to_iodata!(reply))
+    publish_reply(state, Phoenix.JSON.encode!(reply))
   end
 
   defp publish_reply(state, reply) do

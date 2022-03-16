@@ -74,19 +74,6 @@ defmodule Phoenix do
   end
 
   @doc """
-  Returns the configured JSON encoding library for Phoenix.
-
-  To customize the JSON library, including the following
-  in your `config/config.exs`:
-
-      config :phoenix, :json_library, AlternativeJsonLibrary
-
-  """
-  def json_library do
-    Application.get_env(:phoenix, :json_library, Jason)
-  end
-
-  @doc """
   Returns the `:plug_init_mode` that controls when plugs are
   initialized.
 

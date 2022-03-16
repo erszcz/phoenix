@@ -36,6 +36,6 @@ defmodule Phoenix.Socket.V1.JSONSerializer do
   defp encode_v1_fields_only(%Message{} = msg) do
     msg
     |> Map.take([:topic, :event, :payload, :ref])
-    |> Phoenix.json_library().encode_to_iodata!()
+    |> Phoenix.JSON.encode!()
   end
 end
